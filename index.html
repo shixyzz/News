@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новини магазину</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
 
+        .news-container {
+            width: 80%;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .news-header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .news-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 18px;
+            color: #0073e6;
+            margin: 0;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .news-title:hover {
+            color: #005bb5;
+        }
+
+        .news-description {
+            margin-top: 5px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="news-container">
+    <div class="news-header">Новини нашого магазину</div>
+    
+    <div id="newsList">
+        <!-- Новини будуть додані за допомогою JavaScript -->
+    </div>
+</div>
+  
+  <script>
+    const news = [
+        {
+            title: "Розпродаж до Чорної П'ятниці",
+            description: "Грандіозний розпродаж до Чорної П'ятниці вже стартував! Отримайте знижки до 50% на смартфони, ноутбуки, телевізори та інші популярні товари. Пропозиція діє до кінця місяця або до закінчення товарів!"
+        },
+        {
+            title: "Прем'єра нового покоління гаджетів",
+            description: "Ми першими представляємо нову лінійку продукції від відомих брендів! Ознайомтеся з новими моделями смартфонів та планшетів з інноваційними функціями, покращеними камерами та підвищеною продуктивністю. Замовлення відкриті!"
+        },
+        {
+            title: "Подарункові сертифікати для ваших близьких",
+            description: "Не знаєте, що подарувати? Пропонуємо подарункові сертифікати на будь-яку суму! Ідеальний вибір для тих, хто любить техніку та хоче вибрати ідеальний девайс самостійно."
+        },
+        {
+            title: "Безкоштовна доставка на весь жовтень",
+            description: "Замовляйте зараз і отримайте безкоштовну доставку на всі замовлення! Пропозиція діє на території всієї країни до кінця жовтня. Не пропустіть шанс придбати техніку без додаткових витрат."
+        },
+        {
+            title: "Гарячі новинки тижня",
+            description: "Щотижня ми додаємо нові моделі популярних гаджетів у наш асортимент. Ознайомтеся з новинками та будьте в курсі всіх останніх технологічних трендів!"
+        }
+    ];
+
+    const newsContainer = document.getElementById("newsList");
+
+    news.forEach(item => {
+        const newsItem = document.createElement("div");
+        newsItem.classList.add("news-item");
+
+        const newsTitle = document.createElement("h3");
+        newsTitle.classList.add("news-title");
+        newsTitle.textContent = item.title;
+
+        const newsDescription = document.createElement("p");
+        newsDescription.classList.add("news-description");
+        newsDescription.textContent = item.description;
+
+        newsItem.appendChild(newsTitle);
+        newsItem.appendChild(newsDescription);
+        newsContainer.appendChild(newsItem);
+    });
+</script>
+
+</body>
+</html>
